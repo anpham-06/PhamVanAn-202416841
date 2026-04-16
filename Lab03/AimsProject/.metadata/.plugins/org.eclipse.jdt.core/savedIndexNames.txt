@@ -1,0 +1,1 @@
+INDEX VERSION 1.134+/home/thanhtrung/workspace/school/HUST/2025.2/IT3103 - OOP/OOP_lab/lab/OOP.LAB.2025.2.761932.202417056.NguyenThanhTrung/Lab03/SourceCode/AimsProject/.metadata/.plugins/org.eclipse.jdt.core
