@@ -1,0 +1,51 @@
+LAB04 - ANSWERS
+
+##Question Section 9 - Aggregation and constructors:
+Which classes are aggregates of other classes? Should constructors of whole classes initialize their parts?
+Answer:
+Trong lab này, CompactDisc là lớp tổng hợp các đối tượng Track (chứa danh sách track).
+Cart và Store cũng là các lớp "whole" tổng hợp các đối tượng Media.
+Constructor của lớp whole nên khởi tạo các thành phần bên trong về trạng thái mặc định hợp lệ,
+ví dụ tạo sẵn ArrayList rỗng, để đối tượng dùng được ngay và an toàn.
+
+##Question Section 10 - equals:
+When overriding equals(Object obj) in Media, if the passing object is not an instance of Media, what happens?
+Answer:
+equals phải trả về false.
+Phương thức cần kiểm tra kiểu trước (obj instanceof Media). Nếu điều kiện này sai thì hai đối tượng
+không thể so sánh theo quy tắc của Media (so sánh title), nên kết quả là false.
+
+##Question Section 11 - Polymorphism with toString:
+Create an ArrayList<Media>, add Book/DVD/CD, iterate and call toString(). What happens? Explain.
+Answer:
+Do đa hình lúc chạy (runtime polymorphism/dynamic dispatch), mỗi đối tượng sẽ dùng đúng toString() đã override của nó.
+Mặc dù biến tham chiếu có kiểu Media, Java vẫn gọi Book.toString(), DigitalVideoDisc.toString(), hoặc
+CompactDisc.toString() theo kiểu thực tế của đối tượng tại runtime.
+Điều này thể hiện đa hình ở mức hành vi: cùng một lời gọi phương thức nhưng hành vi khác nhau theo lớp con.
+
+##Question Section 12 - Comparable alternative:
+What class should implement Comparable?
+Answer:
+Lựa chọn phổ biến là Media implements Comparable<Media>, vì việc sắp xếp trong cart áp dụng cho các phần tử media.
+
+How should compareTo() be implemented to reflect ordering rules?
+Answer:
+Nếu dùng Comparable thì compareTo() chỉ biểu diễn được một thứ tự tự nhiên duy nhất.
+Ví dụ thứ tự tự nhiên:
+1) Compare title (alphabetical ascending)
+2) If same title, compare cost (descending)
+
+Can we have two ordering rules (title->cost and cost->title) if we use Comparable only?
+Answer:
+Không thuận lợi nếu chỉ dùng Comparable, vì compareTo() chỉ định nghĩa một thứ tự tự nhiên cho mỗi lớp.
+Để hỗ trợ nhiều cách sắp xếp, Comparator là hướng làm phù hợp.
+
+Suppose DVDs have a different ordering rule (title, then decreasing length, then cost). How to modify code?
+Answer:
+Giữ Comparable (nếu có) cho một thứ tự mặc định, và tạo các lớp Comparator riêng cho từng quy tắc sắp xếp.
+Với quy tắc riêng của DVD, tạo một Comparator<DigitalVideoDisc> chuyên biệt (hoặc Comparator<Media> có kiểm tra kiểu)
+để so sánh theo:
+1) title ascending
+2) length descending
+3) cost (as required)
+Sau đó truyền comparator này vào Collections.sort(...) khi sắp xếp danh sách DVD.

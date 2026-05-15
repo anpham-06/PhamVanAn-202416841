@@ -1,0 +1,39 @@
+!SESSION 2026-04-15 11:00:34.150 -----------------------------------------------
+eclipse.buildId=4.39.0.20260305-0817
+java.version=21.0.10
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY ch.qos.logback.classic 1 0 2026-04-15 11:00:37.896
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2026-04-15 11:01:09.651
+!MESSAGE Logback config file: /home/thanhtrung/workspace/school/HUST/2025.2/IT3103 - OOP/OOP_lab/lab/OOP.LAB.2025.2.761932.202417056.NguyenThanhTrung/Lab03/SourceCode/AimsProject/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.101.20251017-1242.xml
+!SESSION 2026-04-15 11:02:18.992 -----------------------------------------------
+eclipse.buildId=4.39.0.20260305-0817
+java.version=21.0.10
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY ch.qos.logback.classic 1 0 2026-04-15 11:02:22.148
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2026-04-15 11:02:31.792
+!MESSAGE Logback config file: /home/thanhtrung/workspace/school/HUST/2025.2/IT3103 - OOP/OOP_lab/lab/OOP.LAB.2025.2.761932.202417056.NguyenThanhTrung/Lab03/SourceCode/AimsProject/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.101.20251017-1242.xml
+!SESSION 2026-04-15 11:03:59.954 -----------------------------------------------
+eclipse.buildId=4.39.0.20260305-0817
+java.version=21.0.10
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os linux -ws gtk -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY ch.qos.logback.classic 1 0 2026-04-15 11:04:03.245
+!MESSAGE Activated before the state location was initialized. Retry after the state location is initialized.
+
+!ENTRY ch.qos.logback.classic 1 0 2026-04-15 11:04:21.997
+!MESSAGE Logback config file: /home/thanhtrung/workspace/school/HUST/2025.2/IT3103 - OOP/OOP_lab/lab/OOP.LAB.2025.2.761932.202417056.NguyenThanhTrung/Lab03/SourceCode/AimsProject/.metadata/.plugins/org.eclipse.m2e.logback/logback.2.7.101.20251017-1242.xml

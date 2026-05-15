@@ -1,0 +1,104 @@
+package hust.soict.hedspi.aims.cart;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import hust.soict.hedspi.aims.media.Media; // Import Media thay vì DigitalVideoDisc
+
+public class Cart {
+    // Sử dụng ArrayList để lưu trữ danh sách Media
+    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+
+    private static final String CART_SEPARATOR = "******************************CART******************************";
+
+    public Cart() {
+        super();
+    }
+
+    // Phương thức sắp xếp theo Tiêu đề rồi đến Giá
+    public void sortByTitle() {
+        Collections.sort(itemsOrdered, Media.COMPARE_BY_TITLE_COST);
+        System.out.println("Cart sorted by title.");
+    }
+
+    // Phương thức sắp xếp theo Giá rồi đến Tiêu đề
+    public void sortByCost() {
+        Collections.sort(itemsOrdered, Media.COMPARE_BY_COST_TITLE);
+        System.out.println("Cart sorted by cost.");
+    }
+    
+    // Phương thức thêm Media vào giỏ hàng
+    public void addMedia(Media media) {
+        if (!itemsOrdered.contains(media)) {
+            itemsOrdered.add(media);
+            System.out.println("The media has been added to the cart.");
+        } else {
+            System.out.println("The media is already in the cart.");
+        }
+    }
+
+    // Phương thức xóa Media khỏi giỏ hàng
+    public void removeMedia(Media media) {
+        if (itemsOrdered.contains(media)) {
+            itemsOrdered.remove(media);
+            System.out.println("The media has been removed from the cart.");
+        } else {
+            System.out.println("The media was not found in the cart.");
+        }
+    }
+
+    public void addDigitalVideoDisc(Media media) {
+        addMedia(media);
+    }
+
+    public void removeDigitalVideoDisc(Media media) {
+        removeMedia(media);
+    }
+
+    // Tính tổng chi phí
+    public float totalCost() {
+        float total = 0;
+        for (Media media : itemsOrdered) {
+            total += media.getCost();
+        }
+        return (float) (Math.round(total * 100.0) / 100.0);
+    }
+
+    // In thông tin giỏ hàng
+    public void print() {
+        System.out.println(CART_SEPARATOR);
+        System.out.println("Ordered Items:");
+
+        for (int i = 0; i < itemsOrdered.size(); i++) {
+            System.out.println((i + 1) + ". " + itemsOrdered.get(i).toString());
+        }
+
+        System.out.println("Total cost: " + totalCost() + " $");
+        System.out.println(CART_SEPARATOR);
+    }
+
+    // Tìm kiếm bằng ID
+    public void searchById(int id) {
+        for (Media media : itemsOrdered) {
+            if (media.getId() == id) {
+                System.out.println("Found match: " + media.toString());
+                return;
+            }
+        }
+        System.out.println("No matching media found with id: " + id);
+    }
+
+    // Tìm kiếm bằng tiêu đề
+    public void searchByTitle(String title) {
+        boolean found = false;
+        for (Media media : itemsOrdered) {
+            // isMatch được định nghĩa ở lớp cha Media hoặc ghi đè ở lớp con
+            if (media.getTitle().toLowerCase().contains(title.toLowerCase())) {
+                System.out.println("Found match: " + media.toString());
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("No matching media found with title: " + title);
+        }
+    }
+}
